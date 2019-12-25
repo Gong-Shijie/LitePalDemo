@@ -1,18 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+
+    <androidx.percentlayout.widget.PercentRelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<androidx.percentlayout.widget.PercentRelativeLayout
+    android:layout_width="match_parent"
+    app:layout_marginTopPercent="5%"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/id_edit"
+        android:layout_width="wrap_content"
+        app:layout_widthPercent="25%"
+        android:layout_height="wrap_content"
+        android:hint="id"
+        android:textSize="30sp"
+        ></EditText>
+    <EditText
+        android:id="@+id/name_edit"
+        app:layout_widthPercent="25%"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignTop="@id/id_edit"
+        android:layout_toRightOf="@id/id_edit"
+        android:hint="name"
+        android:textSize="30sp"></EditText>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/age_edit"
+        android:layout_width="wrap_content"
+        app:layout_widthPercent="25%"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/id_edit"
+        android:layout_toRightOf="@id/name_edit"
+        android:hint="age"
+        android:textSize="30sp"></EditText>
+
+    <EditText
+        app:layout_widthPercent="25%"
+        android:id="@+id/info_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignTop="@id/id_edit"
+        android:layout_toRightOf="@id/age_edit"
+        android:hint="info"
+        android:textSize="30sp"></EditText>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>
+
+
+        <androidx.percentlayout.widget.PercentRelativeLayout xmlns:tools="http://schemas.android.com/tools"
+            app:layout_marginTopPercent="13%"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="wrap_content"
+                app:layout_widthPercent="25%"
+                android:layout_height="wrap_content"
+                android:hint="增加"
+                android:textSize="25sp"
+                ></Button>
+
+            <Button
+                android:id="@+id/btn_dele"
+                android:layout_toRightOf="@id/btn_add"
+                android:layout_width="wrap_content"
+                app:layout_widthPercent="25%"
+                android:layout_height="wrap_content"
+                android:hint="删除"
+                android:textSize="25sp"
+                ></Button>
+
+            <Button
+                android:id="@+id/btn_que"
+                android:layout_toRightOf="@id/btn_dele"
+                android:layout_width="wrap_content"
+                app:layout_widthPercent="25%"
+                android:layout_height="wrap_content"
+                android:hint="查找"
+                android:textSize="25sp"
+                ></Button>
+
+            <Button
+
+                android:id="@+id/btn_update"
+                android:layout_toRightOf="@id/btn_que"
+                android:layout_width="wrap_content"
+                app:layout_widthPercent="25%"
+                android:layout_height="wrap_content"
+                android:hint="修改"
+                android:textSize="25sp"
+                ></Button>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@color/colorPrimary"
+                android:layout_below="@id/btn_que"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:id="@+id/text_data"
+                    android:inputType="textMultiLine"
+                    android:textSize="30sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></TextView>
+            </RelativeLayout>
+            </androidx.percentlayout.widget.PercentRelativeLayout>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+</RelativeLayout>
+<!--尽量减少独立的控件都将相似的控件放在一个布局内-->
+<!--控件摆放的竖直方向位置尽量在父布局内设置-->
