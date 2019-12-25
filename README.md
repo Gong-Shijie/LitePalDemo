@@ -1,8 +1,10 @@
 ### LitePalDemo数据库的完整解决方案
-github地址
+github地址  
 https://github.com/Gong-Shijie/LitePalDemo.git  
+***
 添加依赖  
 >implementation 'org.litepal.android:core:1.4.1'  
+
 #### 添加assets目录并创建XML文件
 
 ![创建litepal.xml文件](https://upload-images.jianshu.io/upload_images/19741117-fadc3323d95f1254.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
